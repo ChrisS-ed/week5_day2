@@ -3,7 +3,7 @@ class CopiesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    
+    @copies = Copy.all
   end
 
   def show

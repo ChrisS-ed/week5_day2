@@ -1,0 +1,6 @@
+<p>User's gamelist</p>
+
+<% current_user.games.each do |g| %>
+  <%= g.name %>
+  <br>
+<% end %>
