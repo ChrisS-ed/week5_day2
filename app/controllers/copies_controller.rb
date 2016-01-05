@@ -11,11 +11,18 @@ class CopiesController < ApplicationController
     end
 
   def new
-    
+    @copy = Copy.new
   end
 
   def create
+    copies = params[:copy][:game_id]
+    copies.each do |id|
+      if id.length > 0
+        current_user.copies.create(game_id: id.to_i, user_id: current_user.id)
+      end
+    end
     
+    redirect_to copies_path
   end
 
   def edit

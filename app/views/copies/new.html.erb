@@ -1,0 +1,6 @@
+<%= form_for @copy do |f| %>
+  <%#= check_box_tag "game_to_add",
+  options_from_collection_for_select(Game.all, :id, :name), :multiple => true %>
+  <%= f.collection_check_boxes(:game_id, Game.all, :id, :name) %>
+  <%= f.submit 'Update game list' %>
+<% end %>
